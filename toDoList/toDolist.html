@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toDolist.css">
+    <link href="script.js">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+        <div class="todolist"> 
+            <input type="text" placeholder="Enter words" class="todoinput">
+            <button onclick="additem()" class="todobut">add</button>
+        </div>
+        <div class="listElements"></div>
+        </div>
+    </div>
+    <script>
+        const arrayList = [];
+        
+        function updateList(){
+        let todolistHtml = '';
+        for(let i = 0; i < arrayList.length; i++){
+                const todo =  arrayList[i];
+                const html = `<div class="checklist">
+                    <input type='checkbox' class="checkbox1">
+                    <p class="line">${todo}</p></div><button class="deleteBut" 
+                        onclick="arrayList.splice(${i},1);
+                                updateList()">Delete</button>`;
+                todolistHtml+=html; 
+        }
+        document.querySelector('.listElements').innerHTML = todolistHtml;
+        }
+
+        function additem(){
+        const element = document.querySelector('.todoinput').value;
+        if (element == ""){
+                alert("Enter at least one word!")
+        }
+        else{
+                arrayList.push(element);
+                document.querySelector('.todoinput').value = '';
+        }
+        updateList();
+        }
+    </script>
+</body>
+</html>

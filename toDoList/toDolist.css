@@ -1,0 +1,61 @@
+.container{
+    text-align: center;
+}
+
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 80px;
+}
+
+.listElements{
+    justify-content: center;
+    width: 50vw;
+    margin: auto;
+    display: block;
+}
+
+.line{
+    width: 80%;
+    text-align: left;
+    cursor: pointer;
+}
+
+line:click + .line{
+    text-decoration: line-through;
+}
+
+.todoinput{
+    padding: 10px 74px;
+    border: 1px solid grey;
+    margin-bottom: 26px;
+}
+
+.todobut{
+    padding: 10px 35px;
+    color: white;
+    background-color: green;
+    border: 0;
+    border-radius: 5px;
+}
+
+.checkbox1{
+    float: left;
+}
+
+.checkbox1:checked + .line{
+    text-decoration: line-through;
+}
+
+.deleteBut{
+    padding: 10px 35px;
+    width: auto;
+    background: rgb(232, 48, 48);
+    color: aliceblue;
+    position: relative;
+    left: 16rem;
+    bottom: 2.1rem;
+}
+
+.checklist{
+    padding: 0 0 0 10%
+}
